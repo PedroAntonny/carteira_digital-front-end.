@@ -45,6 +45,7 @@ Todas as operações usam Next.js Server Actions:
 - `getBalanceAction` - Saldo
 
 **Vantagens:**
+
 - Sem necessidade de API routes
 - Type-safe end-to-end
 - Execução no servidor
@@ -60,6 +61,7 @@ Schemas de validação:
 - `transferSchema` - Transferência
 
 **Integração com React Hook Form:**
+
 ```typescript
 const { register, handleSubmit } = useForm({
   resolver: zodResolver(schema),
@@ -100,8 +102,8 @@ const { register, handleSubmit } = useForm({
 
 - `useState` - Estado local
 - `useEffect` - Efeitos colaterais
-- `useCallback` - Memoização de funções
-- `memo` - Memoização de componentes
+- `useCallback` - Memorização de funções
+- `memo` - Memorização de componentes
 
 ## 🚀 Comandos
 
@@ -123,11 +125,56 @@ yarn lint:fix
 yarn format
 ```
 
+## 🚀 Como Executar
+
+### Pré-requisitos
+
+- Node.js 18+
+- Yarn
+- Backend rodando (veja [backend/README.md](../backend/README.md))
+
+### 1. Configurar Variáveis de Ambiente
+
+```bash
+cp env.example .env.local
+# Edite .env.local com a URL da API backend
+```
+
+**Variável obrigatória:**
+
+- `NEXT_PUBLIC_API_URL` - URL da API backend (padrão: `http://localhost:3001/api`)
+
+### 2. Instalar Dependências
+
+```bash
+yarn install
+```
+
+### 3. Iniciar Aplicação
+
+```bash
+yarn dev
+```
+
+A aplicação estará disponível em: **http://localhost:3000**
+
+## 🔗 Backend
+
+Este frontend requer que o backend esteja rodando.
+
+Para configurar e executar o backend, veja: [backend/README.md](../backend/README.md)
+
+**Importante:** Certifique-se de que:
+
+- O backend está rodando na porta 3001
+- A variável `NEXT_PUBLIC_API_URL` aponta para a URL correta do backend
+
 ## 🔧 Variáveis de Ambiente
 
 Veja `env.example` para todas as variáveis necessárias.
 
 **Obrigatória:**
+
 - `NEXT_PUBLIC_API_URL` - URL da API backend
 
 ## 📱 Páginas
@@ -162,5 +209,3 @@ Veja `env.example` para todas as variáveis necessárias.
 - ✅ Loading states
 - ✅ Tratamento de erros
 - ✅ Server Actions
-
-
